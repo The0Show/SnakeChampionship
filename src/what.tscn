@@ -1,3 +1,13 @@
 [gd_scene format=2]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 261.0
+margin_top = 217.0
+margin_right = 603.0
+margin_bottom = 246.0
+text = "there will be a game here soon, i promise (maybe)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
