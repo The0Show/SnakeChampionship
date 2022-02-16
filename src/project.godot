@@ -8,11 +8,30 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Object",
+"class": "TheGrid",
+"language": "GDScript",
+"path": "res://Scripts/grid.gd"
+} ]
+_global_script_class_icons={
+"TheGrid": ""
+}
+
 [application]
 
 config/name="Snake Championship"
-run/main_scene="res://what.tscn"
+run/main_scene="res://Scenes/Presentation/Startup.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneChanger="*res://Scripts/SceneChanger.gd"
+Grid="*res://Scripts/grid.gd"
+
+[global]
+
+"time scale"=true
 
 [physics]
 

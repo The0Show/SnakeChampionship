@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/SceneScripts/Startup/StartupMain.gd" type="Script" id=1]
+[ext_resource path="res://Assets/SFX/UISelect.wav" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/Backgrounds/Gradient.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "StartupFadeIn"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Startup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -371, 171 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" parent="Panel" instance=ExtResource( 3 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 215.0
+margin_right = 1024.0
+margin_bottom = 314.0
+text = "Hi there!
+
+This game is still in beta. Things might break and bugs are around!
+If you find any, please report it via the0show.com/contact.
+
+Thank you, I hope you enjoy this game! :D"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 364.0
+margin_right = 1024.0
+margin_bottom = 384.0
+text = "Start Game"
+
+[node name="UISelect" type="AudioStreamPlayer" parent="Panel/VBoxContainer/Button"]
+stream = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/VBoxContainer"]
+anims/StartupFadeIn = SubResource( 2 )
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]

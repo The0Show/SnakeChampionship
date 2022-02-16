@@ -1,0 +1,495 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Assets/Fonts/Heebo-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/UIScripts/InGame.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Music/bgm1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/SFX/finish1.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/SFX/count.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/SFX/finish2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/SFX/start.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "CountdownIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.883, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 5.883, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "StatusIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.883, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 5.883, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 5
+outline_color = Color( 0.0745098, 0.411765, 0.0705882, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -31, -14.023 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 252, 104 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+outline_color = Color( 0.0745098, 0.411765, 0.0705882, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 14
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "GameEnd"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../IntroPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../StatusText:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "StartGame"
+length = 5.12
+tracks/0/type = "value"
+tracks/0/path = NodePath("../IntroPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../StatusText/StatusTextAnimation:current_animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.3, 4.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ "StatusIn", "StatusIn" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../StatusText:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "", "ready?", "go!" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../StatusText:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.3, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[node name="InGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+minutes = 1
+
+[node name="CountdownText" type="Label" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -87.0
+margin_top = -111.0
+margin_right = 87.0
+margin_bottom = 111.0
+rect_pivot_offset = Vector2( 86, 112 )
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CountdownTextAnimation" type="AnimationPlayer" parent="CountdownText"]
+anims/CountdownIn = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CountdownText"]
+stream = ExtResource( 5 )
+
+[node name="StatusText" type="Label" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -493.0
+margin_top = -74.0
+margin_right = 493.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 493, 74 )
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusTextAnimation" type="AnimationPlayer" parent="StatusText"]
+anims/RESET = SubResource( 6 )
+anims/StatusIn = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StatusText"]
+stream = ExtResource( 6 )
+
+[node name="FadeOut" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -126.0
+margin_top = 33.0
+margin_right = 126.0
+margin_bottom = 137.0
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Interval" type="Timer" parent="TimerText"]
+one_shot = true
+
+[node name="SegmentText" type="Label" parent="TimerText"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_right = 252.0
+margin_bottom = 104.0
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TimerText/SegmentText"]
+"anims/New Anim" = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TimerText/SegmentText"]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
+[node name="ScoreText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -330.0
+margin_top = 72.0
+margin_right = -77.995
+margin_bottom = 110.001
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "01658657"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreTextHeader" type="Label" parent="ScoreText"]
+margin_top = -27.0
+margin_right = 252.0
+margin_bottom = 11.0
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "SCORE"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 78.0
+margin_top = 72.0
+margin_right = 330.0
+margin_bottom = 110.0
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "01658657"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreTextHeader" type="Label" parent="HighScoreText"]
+margin_top = -27.0
+margin_right = 252.0
+margin_bottom = 11.0001
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "HIGH SCORE"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ScoreText")
+anims/GameEnd = SubResource( 11 )
+anims/RESET = SubResource( 12 )
+anims/StartGame = SubResource( 13 )
+
+[node name="IntroPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[connection signal="timeout" from="TimerText/Interval" to="." method="_on_Interval_timeout"]

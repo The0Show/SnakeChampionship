@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/BackgroundScripts/Gradient.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.362637, 0.675824, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.648438, 0.0785217, 0.0785217, 1, 0.620806, 0.289662, 0.449419, 1, 0.297226, 0.086731, 0.382813, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "GradientBG"
+length = 25.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture:gradient:colors")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10, 20, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ PoolColorArray( 1, 0, 0, 1, 0.648438, 0.0785217, 0.0785217, 1, 0.620806, 0.289662, 0.449419, 1, 0.297226, 0.086731, 0.382813, 1 ), PoolColorArray( 0.215686, 0.721569, 0.235294, 1, 0.823529, 0.2, 0.2, 1, 0.12549, 0.113725, 0.423529, 1, 0.0941176, 0.721569, 0.443137, 1 ), PoolColorArray( 0.635294, 0.215686, 0.721569, 1, 0.380392, 0.2, 0.823529, 1, 0.113725, 0.423529, 0.168627, 1, 0.721569, 0.0941176, 0.0941176, 1 ), PoolColorArray( 0.215686, 0.556863, 0.721569, 1, 0.803922, 0.823529, 0.2, 1, 0.423529, 0.113725, 0.419608, 1, 0.721569, 0.0941176, 0.0941176, 1 ), PoolColorArray( 1, 0, 0, 1, 0.648438, 0.0785217, 0.0785217, 1, 0.620806, 0.289662, 0.449419, 1, 0.297226, 0.086731, 0.382813, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture:gradient:colors")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ PoolColorArray( 1, 0, 0, 1, 0.648438, 0.0785217, 0.0785217, 1, 0.620806, 0.289662, 0.449419, 1, 0.297226, 0.086731, 0.382813, 1 ) ]
+}
+
+[node name="TextureRect" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -672, 308 )
+texture = SubResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/GradientBG = SubResource( 3 )
+anims/RESET = SubResource( 4 )

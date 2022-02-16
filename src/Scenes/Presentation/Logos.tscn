@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Videos/the0show.webm" type="VideoStream" id=1]
+[ext_resource path="res://Scripts/SceneScripts/Presentation/Logos/LogosMain.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/Videos/the0show/74.png" type="Texture" id=63]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="Panel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 63 )
+expand = true
+
+[connection signal="finished" from="Panel/VideoPlayer" to="." method="_on_VideoPlayer_finished"]
